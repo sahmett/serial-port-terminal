@@ -28,83 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn2_bkes = new System.Windows.Forms.Button();
-            this.btn1_baglan = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb2_bauderate = new System.Windows.Forms.ComboBox();
-            this.cb1_port = new System.Windows.Forms.ComboBox();
+            this.btnBaglantiKes = new System.Windows.Forms.Button();
+            this.btnBaglan = new System.Windows.Forms.Button();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.labelBaudrate = new System.Windows.Forms.Label();
+            this.cbBauderate = new System.Windows.Forms.ComboBox();
+            this.cbPort = new System.Windows.Forms.ComboBox();
+            this.cbDatabit = new System.Windows.Forms.ComboBox();
+            this.labelDatabit = new System.Windows.Forms.Label();
+            this.lbGidenVeri = new System.Windows.Forms.ListBox();
+            this.lbGelenVeri = new System.Windows.Forms.ListBox();
+            this.tbGidecekVeri = new System.Windows.Forms.TextBox();
+            this.btnVeriGonder = new System.Windows.Forms.Button();
+            this.labelGidecekVeri = new System.Windows.Forms.Label();
+            this.labelGidenVeri = new System.Windows.Forms.Label();
+            this.labelGelenVeri = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn2_bkes
+            // btnBaglantiKes
             // 
-            this.btn2_bkes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn2_bkes.Location = new System.Drawing.Point(272, 48);
-            this.btn2_bkes.Name = "btn2_bkes";
-            this.btn2_bkes.Size = new System.Drawing.Size(87, 30);
-            this.btn2_bkes.TabIndex = 15;
-            this.btn2_bkes.Text = "Baglantı Kes";
-            this.btn2_bkes.UseVisualStyleBackColor = true;
+            this.btnBaglantiKes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnBaglantiKes.Location = new System.Drawing.Point(266, 82);
+            this.btnBaglantiKes.Name = "btnBaglantiKes";
+            this.btnBaglantiKes.Size = new System.Drawing.Size(87, 23);
+            this.btnBaglantiKes.TabIndex = 15;
+            this.btnBaglantiKes.Text = "Baglantı Kes";
+            this.btnBaglantiKes.UseVisualStyleBackColor = true;
             // 
-            // btn1_baglan
+            // btnBaglan
             // 
-            this.btn1_baglan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn1_baglan.Location = new System.Drawing.Point(272, 86);
-            this.btn1_baglan.Name = "btn1_baglan";
-            this.btn1_baglan.Size = new System.Drawing.Size(87, 29);
-            this.btn1_baglan.TabIndex = 14;
-            this.btn1_baglan.Text = "Baglan";
-            this.btn1_baglan.UseVisualStyleBackColor = true;
+            this.btnBaglan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnBaglan.Location = new System.Drawing.Point(266, 27);
+            this.btnBaglan.Name = "btnBaglan";
+            this.btnBaglan.Size = new System.Drawing.Size(87, 51);
+            this.btnBaglan.TabIndex = 14;
+            this.btnBaglan.Text = "Baglan";
+            this.btnBaglan.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelPort
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(23, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 12);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Port";
+            this.labelPort.AutoSize = true;
+            this.labelPort.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelPort.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelPort.Location = new System.Drawing.Point(18, 34);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(28, 12);
+            this.labelPort.TabIndex = 18;
+            this.labelPort.Text = "Port";
             // 
-            // label2
+            // labelBaudrate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(23, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 12);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "BoundR";
+            this.labelBaudrate.AutoSize = true;
+            this.labelBaudrate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelBaudrate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelBaudrate.Location = new System.Drawing.Point(17, 61);
+            this.labelBaudrate.Name = "labelBaudrate";
+            this.labelBaudrate.Size = new System.Drawing.Size(49, 12);
+            this.labelBaudrate.TabIndex = 19;
+            this.labelBaudrate.Text = "BoundR";
             // 
-            // cb2_bauderate
+            // cbBauderate
             // 
-            this.cb2_bauderate.FormattingEnabled = true;
-            this.cb2_bauderate.Location = new System.Drawing.Point(118, 91);
-            this.cb2_bauderate.Name = "cb2_bauderate";
-            this.cb2_bauderate.Size = new System.Drawing.Size(116, 21);
-            this.cb2_bauderate.TabIndex = 17;
+            this.cbBauderate.FormattingEnabled = true;
+            this.cbBauderate.Location = new System.Drawing.Point(112, 57);
+            this.cbBauderate.Name = "cbBauderate";
+            this.cbBauderate.Size = new System.Drawing.Size(133, 21);
+            this.cbBauderate.TabIndex = 17;
             // 
-            // cb1_port
+            // cbPort
             // 
-            this.cb1_port.FormattingEnabled = true;
-            this.cb1_port.Location = new System.Drawing.Point(118, 54);
-            this.cb1_port.Name = "cb1_port";
-            this.cb1_port.Size = new System.Drawing.Size(115, 21);
-            this.cb1_port.TabIndex = 16;
+            this.cbPort.FormattingEnabled = true;
+            this.cbPort.Location = new System.Drawing.Point(113, 30);
+            this.cbPort.Name = "cbPort";
+            this.cbPort.Size = new System.Drawing.Size(132, 21);
+            this.cbPort.TabIndex = 16;
+            // 
+            // cbDatabit
+            // 
+            this.cbDatabit.FormattingEnabled = true;
+            this.cbDatabit.Location = new System.Drawing.Point(113, 84);
+            this.cbDatabit.Name = "cbDatabit";
+            this.cbDatabit.Size = new System.Drawing.Size(132, 21);
+            this.cbDatabit.TabIndex = 20;
+            // 
+            // labelDatabit
+            // 
+            this.labelDatabit.AutoSize = true;
+            this.labelDatabit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelDatabit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelDatabit.Location = new System.Drawing.Point(17, 88);
+            this.labelDatabit.Name = "labelDatabit";
+            this.labelDatabit.Size = new System.Drawing.Size(46, 12);
+            this.labelDatabit.TabIndex = 21;
+            this.labelDatabit.Text = "DataBit";
+            // 
+            // lbGidenVeri
+            // 
+            this.lbGidenVeri.FormattingEnabled = true;
+            this.lbGidenVeri.Location = new System.Drawing.Point(113, 185);
+            this.lbGidenVeri.Name = "lbGidenVeri";
+            this.lbGidenVeri.Size = new System.Drawing.Size(132, 56);
+            this.lbGidenVeri.TabIndex = 22;
+            // 
+            // lbGelenVeri
+            // 
+            this.lbGelenVeri.FormattingEnabled = true;
+            this.lbGelenVeri.Location = new System.Drawing.Point(112, 250);
+            this.lbGelenVeri.Name = "lbGelenVeri";
+            this.lbGelenVeri.Size = new System.Drawing.Size(241, 186);
+            this.lbGelenVeri.TabIndex = 23;
+            // 
+            // tbGidecekVeri
+            // 
+            this.tbGidecekVeri.Location = new System.Drawing.Point(112, 147);
+            this.tbGidecekVeri.Name = "tbGidecekVeri";
+            this.tbGidecekVeri.Size = new System.Drawing.Size(133, 20);
+            this.tbGidecekVeri.TabIndex = 24;
+            // 
+            // btnVeriGonder
+            // 
+            this.btnVeriGonder.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVeriGonder.Location = new System.Drawing.Point(266, 147);
+            this.btnVeriGonder.Name = "btnVeriGonder";
+            this.btnVeriGonder.Size = new System.Drawing.Size(87, 94);
+            this.btnVeriGonder.TabIndex = 25;
+            this.btnVeriGonder.Text = "Veri Gonder";
+            this.btnVeriGonder.UseVisualStyleBackColor = true;
+            // 
+            // labelGidecekVeri
+            // 
+            this.labelGidecekVeri.AutoSize = true;
+            this.labelGidecekVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelGidecekVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelGidecekVeri.Location = new System.Drawing.Point(19, 151);
+            this.labelGidecekVeri.Name = "labelGidecekVeri";
+            this.labelGidecekVeri.Size = new System.Drawing.Size(77, 12);
+            this.labelGidecekVeri.TabIndex = 26;
+            this.labelGidecekVeri.Text = "Gidecek Veri";
+            // 
+            // labelGidenVeri
+            // 
+            this.labelGidenVeri.AutoSize = true;
+            this.labelGidenVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelGidenVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelGidenVeri.Location = new System.Drawing.Point(20, 185);
+            this.labelGidenVeri.Name = "labelGidenVeri";
+            this.labelGidenVeri.Size = new System.Drawing.Size(64, 12);
+            this.labelGidenVeri.TabIndex = 27;
+            this.labelGidenVeri.Text = "Giden Veri";
+            // 
+            // labelGelenVeri
+            // 
+            this.labelGelenVeri.AutoSize = true;
+            this.labelGelenVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelGelenVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelGelenVeri.Location = new System.Drawing.Point(20, 250);
+            this.labelGelenVeri.Name = "labelGelenVeri";
+            this.labelGelenVeri.Size = new System.Drawing.Size(64, 12);
+            this.labelGelenVeri.TabIndex = 28;
+            this.labelGelenVeri.Text = "Gelen Veri";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 450);
-            this.Controls.Add(this.btn2_bkes);
-            this.Controls.Add(this.btn1_baglan);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cb2_bauderate);
-            this.Controls.Add(this.cb1_port);
+            this.ClientSize = new System.Drawing.Size(384, 474);
+            this.Controls.Add(this.labelGelenVeri);
+            this.Controls.Add(this.labelGidenVeri);
+            this.Controls.Add(this.labelGidecekVeri);
+            this.Controls.Add(this.btnVeriGonder);
+            this.Controls.Add(this.tbGidecekVeri);
+            this.Controls.Add(this.lbGelenVeri);
+            this.Controls.Add(this.lbGidenVeri);
+            this.Controls.Add(this.labelDatabit);
+            this.Controls.Add(this.cbDatabit);
+            this.Controls.Add(this.btnBaglantiKes);
+            this.Controls.Add(this.btnBaglan);
+            this.Controls.Add(this.labelPort);
+            this.Controls.Add(this.labelBaudrate);
+            this.Controls.Add(this.cbBauderate);
+            this.Controls.Add(this.cbPort);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -114,12 +217,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn2_bkes;
-        private System.Windows.Forms.Button btn1_baglan;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cb2_bauderate;
-        private System.Windows.Forms.ComboBox cb1_port;
+        private System.Windows.Forms.Button btnBaglantiKes;
+        private System.Windows.Forms.Button btnBaglan;
+        private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.Label labelBaudrate;
+        private System.Windows.Forms.ComboBox cbBauderate;
+        private System.Windows.Forms.ComboBox cbPort;
+        private System.Windows.Forms.ComboBox cbDatabit;
+        private System.Windows.Forms.Label labelDatabit;
+        private System.Windows.Forms.ListBox lbGidenVeri;
+        private System.Windows.Forms.ListBox lbGelenVeri;
+        private System.Windows.Forms.TextBox tbGidecekVeri;
+        private System.Windows.Forms.Button btnVeriGonder;
+        private System.Windows.Forms.Label labelGidecekVeri;
+        private System.Windows.Forms.Label labelGidenVeri;
+        private System.Windows.Forms.Label labelGelenVeri;
     }
 }
 
