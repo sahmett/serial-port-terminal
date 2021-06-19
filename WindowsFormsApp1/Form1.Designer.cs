@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnBaglantiKes = new System.Windows.Forms.Button();
             this.btnBaglan = new System.Windows.Forms.Button();
             this.labelPort = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             this.labelGidecekVeri = new System.Windows.Forms.Label();
             this.labelGidenVeri = new System.Windows.Forms.Label();
             this.labelGelenVeri = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // btnBaglantiKes
@@ -54,6 +57,7 @@
             this.btnBaglantiKes.TabIndex = 15;
             this.btnBaglantiKes.Text = "Baglantı Kes";
             this.btnBaglantiKes.UseVisualStyleBackColor = true;
+            this.btnBaglantiKes.Click += new System.EventHandler(this.btnBaglantiKes_Click);
             // 
             // btnBaglan
             // 
@@ -64,6 +68,7 @@
             this.btnBaglan.TabIndex = 14;
             this.btnBaglan.Text = "Baglan";
             this.btnBaglan.UseVisualStyleBackColor = true;
+            this.btnBaglan.Click += new System.EventHandler(this.btnBaglan_Click);
             // 
             // labelPort
             // 
@@ -188,6 +193,10 @@
             this.labelGelenVeri.TabIndex = 28;
             this.labelGelenVeri.Text = "Gelen Veri";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +241,8 @@
         private System.Windows.Forms.Label labelGidecekVeri;
         private System.Windows.Forms.Label labelGidenVeri;
         private System.Windows.Forms.Label labelGelenVeri;
+        private System.Windows.Forms.Timer timer1;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

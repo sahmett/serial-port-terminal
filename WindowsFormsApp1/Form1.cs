@@ -28,6 +28,53 @@ namespace WindowsFormsApp1
 
         }
 
+        private void btnBaglan_Click(object sender, EventArgs e)
+        {
+            serialPort1.BaudRate = Convert.ToInt16(cbBauderate.Text);
+            try
+            {
+                serialPort1.PortName = cbPort.Text;
+
+                if (!serialPort1.IsOpen)
+                {
+                    timer1.Start();
+                    serialPort1.Open();
+                    btnBaglan.Enabled = false;
+                    btnBaglantiKes.Enabled = true;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Baglantı Kurulamadı");
+                btnBaglantiKes.Enabled = true;
+            }     
     }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                string sonuc = serialPort1.ReadLine();             //satır satır oku serail portu
+                string[] paket = sonuc.Split('#');                 //split türü
+
+                double degisken1 = Convert.ToDouble(paket[1]);     //gps longh
+                double degisken2 = Convert.ToDouble(paket[2]);     //gps longh
+
+                double chartdeger = Convert.ToDouble(paket[0]);    //grafik sicaklik
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Timer Hatası");
+            }
+        }
+
+        private void btnBaglantiKes_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            timer1.Stop();
+            btnBaglan.Enabled = true;
+            btnBaglantiKes.Enabled = false;
+            MessageBox.Show("baglantı kesildi");
+        }
     }
 }
