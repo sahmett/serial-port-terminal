@@ -53,14 +53,16 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
-            {
+            {                               //read existing de kullanılabilir
                 string sonuc = serialPort1.ReadLine();             //satır satır oku serail portu
                 string[] paket = sonuc.Split('#');                 //split türü
 
-                double degisken1 = Convert.ToDouble(paket[1]);     //gps longh
-                double degisken2 = Convert.ToDouble(paket[2]);     //gps longh
+                double degisken1 = Convert.ToDouble(paket[0]);
+                lbGelenVeri.Items.Add(degisken1);
 
-                double chartdeger = Convert.ToDouble(paket[0]);    //grafik sicaklik
+                double degisken2 = Convert.ToDouble(paket[1]);     
+                double degisken3 = Convert.ToDouble(paket[2]);    
+
             }
             catch (Exception)
             {
@@ -74,7 +76,25 @@ namespace WindowsFormsApp1
             timer1.Stop();
             btnBaglan.Enabled = true;
             btnBaglantiKes.Enabled = false;
-            MessageBox.Show("baglantı kesildi");
+            MessageBox.Show("Baglantı Kesildi");
+        }
+
+        private void btnVeriGonder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!serialPort1.IsOpen)
+                {
+                    serialPort1.WriteLine(tbGidecekVeri.Text);
+                    lbGidenVeri.Items.Add(tbGidecekVeri.Text);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Port Bağlantısı Yok");
+            }
+
         }
     }
 }

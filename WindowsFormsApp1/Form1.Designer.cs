@@ -159,6 +159,7 @@
             this.btnVeriGonder.TabIndex = 25;
             this.btnVeriGonder.Text = "Veri Gonder";
             this.btnVeriGonder.UseVisualStyleBackColor = true;
+            this.btnVeriGonder.Click += new System.EventHandler(this.btnVeriGonder_Click);
             // 
             // labelGidecekVeri
             // 
