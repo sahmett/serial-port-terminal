@@ -60,16 +60,26 @@ namespace WindowsFormsApp1
                 string[] paket = sonuc.Split('#');                 //split türü
 
                 double degisken1 = Convert.ToDouble(paket[0]);
-                lbGelenVeri.Items.Add("girdi" + degisken1.ToString);
+                lbGelenVeri.Items.Add(degisken1.ToString);
 
             //    double degisken2 = Convert.ToDouble(paket[1]);     
             //   double degisken3 = Convert.ToDouble(paket[2]);    
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Timer Hatası");
+                MessageBox.Show(ex + "Timer Hatası ");
+                timer1.Stop();
+                serialPort1.Close();
+                btnBaglan.Enabled = true;
+                btnBaglantiKes.Enabled = false;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e) //formun yenilenme hızı 
+        {
+            timer1.Interval = 1000;
+           
         }
 
         private void btnBaglantiKes_Click(object sender, EventArgs e)
