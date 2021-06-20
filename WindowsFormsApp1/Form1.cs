@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 string[] paket = sonuc.Split('#');                 //split türü
 
                 double degisken1 = Convert.ToDouble(paket[0]);
-                lbGelenVeri.Items.Add(degisken1.ToString);
+                lbGelenVeri.Items.Add(degisken1);
 
             //    double degisken2 = Convert.ToDouble(paket[1]);     
             //   double degisken3 = Convert.ToDouble(paket[2]);    
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex + "Timer Hatası ");
+                MessageBox.Show(ex + "Timer Hatası, baglantı kesiliyor ");
                 timer1.Stop();
                 serialPort1.Close();
                 btnBaglan.Enabled = true;
@@ -98,14 +98,26 @@ namespace WindowsFormsApp1
                 if (!serialPort1.IsOpen)
                 {
                     serialPort1.WriteLine(tbGidecekVeri.Text);
+                    //serialPort1.Write(tbGidecekVeri.Text);
+                    tbGidecekVeri.Clear();
                     lbGidenVeri.Items.Add(tbGidecekVeri.Text);
                 }
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Port Bağlantısı Yok");
+                MessageBox.Show("Port Bağlantısı Yok, Yeniden Baglanmaya Calısınız");
+                timer1.Stop();
+                serialPort1.Close();
+                btnBaglan.Enabled = true;
+                btnBaglantiKes.Enabled = false;
             }
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)//formun yenilenme hızı
+        {
+                timer1.Interval = 1000;    
 
         }
     }

@@ -5,6 +5,11 @@
       "taskLabel": "task-Form1.Designer",
       "appliesTo": "WindowsFormsApp1/Form1.Designer.cs",
       "type": "launch"
+    },
+    {
+      "taskLabel": "task-Form1.Designer",
+      "appliesTo": "WindowsFormsApp1/Form1.Designer.cs",
+      "type": "launch"
     }
   ]
 }
