@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             {
                 cbPort.Items.Add(portAdi);
             }
+            
 
             cbBauderate.Items.AddRange(new string[]
             { "300", "600", "1200", "2400", "4800", "9600", "19200" }); //bauderate degerleri
@@ -39,11 +40,12 @@ namespace WindowsFormsApp1
                 {
                     timer1.Start();
                     serialPort1.Open();
+
                     btnBaglan.Enabled = false;
                     btnBaglantiKes.Enabled = true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Baglantı Kurulamadı");
                 btnBaglantiKes.Enabled = true;
@@ -58,10 +60,10 @@ namespace WindowsFormsApp1
                 string[] paket = sonuc.Split('#');                 //split türü
 
                 double degisken1 = Convert.ToDouble(paket[0]);
-                lbGelenVeri.Items.Add(degisken1);
+                lbGelenVeri.Items.Add("girdi" + degisken1.ToString);
 
-                double degisken2 = Convert.ToDouble(paket[1]);     
-                double degisken3 = Convert.ToDouble(paket[2]);    
+            //    double degisken2 = Convert.ToDouble(paket[1]);     
+            //   double degisken3 = Convert.ToDouble(paket[2]);    
 
             }
             catch (Exception)
