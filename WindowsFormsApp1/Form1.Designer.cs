@@ -35,8 +35,6 @@
             this.labelBaudrate = new System.Windows.Forms.Label();
             this.cbBauderate = new System.Windows.Forms.ComboBox();
             this.cbPort = new System.Windows.Forms.ComboBox();
-            this.cbDatabit = new System.Windows.Forms.ComboBox();
-            this.labelDatabit = new System.Windows.Forms.Label();
             this.lbGidenVeri = new System.Windows.Forms.ListBox();
             this.lbGelenVeri = new System.Windows.Forms.ListBox();
             this.tbGidecekVeri = new System.Windows.Forms.TextBox();
@@ -107,25 +105,6 @@
             this.cbPort.Name = "cbPort";
             this.cbPort.Size = new System.Drawing.Size(132, 21);
             this.cbPort.TabIndex = 16;
-            // 
-            // cbDatabit
-            // 
-            this.cbDatabit.FormattingEnabled = true;
-            this.cbDatabit.Location = new System.Drawing.Point(113, 84);
-            this.cbDatabit.Name = "cbDatabit";
-            this.cbDatabit.Size = new System.Drawing.Size(132, 21);
-            this.cbDatabit.TabIndex = 20;
-            // 
-            // labelDatabit
-            // 
-            this.labelDatabit.AutoSize = true;
-            this.labelDatabit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
-            this.labelDatabit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelDatabit.Location = new System.Drawing.Point(17, 88);
-            this.labelDatabit.Name = "labelDatabit";
-            this.labelDatabit.Size = new System.Drawing.Size(46, 12);
-            this.labelDatabit.TabIndex = 21;
-            this.labelDatabit.Text = "DataBit";
             // 
             // lbGidenVeri
             // 
@@ -210,8 +189,6 @@
             this.Controls.Add(this.tbGidecekVeri);
             this.Controls.Add(this.lbGelenVeri);
             this.Controls.Add(this.lbGidenVeri);
-            this.Controls.Add(this.labelDatabit);
-            this.Controls.Add(this.cbDatabit);
             this.Controls.Add(this.btnBaglantiKes);
             this.Controls.Add(this.btnBaglan);
             this.Controls.Add(this.labelPort);
@@ -234,8 +211,6 @@
         private System.Windows.Forms.Label labelBaudrate;
         private System.Windows.Forms.ComboBox cbBauderate;
         private System.Windows.Forms.ComboBox cbPort;
-        private System.Windows.Forms.ComboBox cbDatabit;
-        private System.Windows.Forms.Label labelDatabit;
         private System.Windows.Forms.ListBox lbGidenVeri;
         private System.Windows.Forms.ListBox lbGelenVeri;
         private System.Windows.Forms.TextBox tbGidecekVeri;
