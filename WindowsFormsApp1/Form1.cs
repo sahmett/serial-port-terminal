@@ -99,8 +99,9 @@ namespace WindowsFormsApp1
                 {
                     serialPort1.WriteLine(tbGidecekVeri.Text);
                     //serialPort1.Write(tbGidecekVeri.Text);
-                    tbGidecekVeri.Clear();
+                   
                     lbGidenVeri.Items.Add(tbGidecekVeri.Text);
+                    tbGidecekVeri.Clear();
                 }
 
             }
