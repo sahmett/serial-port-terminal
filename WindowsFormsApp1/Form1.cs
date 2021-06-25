@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
+
+
             string[] portlar = SerialPort.GetPortNames();  //port cagırmak
             foreach (string portAdi in portlar)
             {
@@ -47,7 +49,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Baglantı Kurulamadı");
+                MessageBox.Show(ex+ "Baglantı Kurulamadı");
                 btnBaglantiKes.Enabled = true;
             }     
     }
@@ -55,15 +57,33 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
-            {                               //read existing de kullanılabilir
-                string sonuc = serialPort1.ReadLine();             //satır satır oku serail portu
-                string[] paket = sonuc.Split('#');                 //split türü
+            {       //read existing de kullanılabilir
+                string sonuc = serialPort1.ReadLine();      
+                
+                //string[] paket = sonuc.Split('#');         //split türü
+                //double degisken1 = Convert.ToDouble(paket[0]);
+                //lbGelenVeri.Items.Add(degisken1);
+                //double degisken2 = Convert.ToDouble(paket[1]);     
+                //ouble degisken3 = Convert.ToDouble(paket[2]);  
 
-                double degisken1 = Convert.ToDouble(paket[0]);
-                lbGelenVeri.Items.Add(degisken1);
+                lbGelenVeri.Items.Add(sonuc);
 
-            //    double degisken2 = Convert.ToDouble(paket[1]);     
-            //   double degisken3 = Convert.ToDouble(paket[2]);    
+                try
+                {
+                    const string sPath = "log.txt";
+                    System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
+                    foreach (var item in lbGelenVeri.Items)
+                    {
+                        SaveFile.WriteLine(item);
+                    }
+
+                SaveFile.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex+ "Txt Kaydedilemedi"); 
+                    
+                }
 
             }
             catch (Exception ex)
@@ -89,6 +109,7 @@ namespace WindowsFormsApp1
             btnBaglan.Enabled = true;
             btnBaglantiKes.Enabled = false;
             MessageBox.Show("Baglantı Kesildi");
+      
         }
 
         private void btnVeriGonder_Click(object sender, EventArgs e)
@@ -115,7 +136,6 @@ namespace WindowsFormsApp1
             }
 
         }
-
         private void Form1_Load_1(object sender, EventArgs e)//formun yenilenme hızı
         {
                 timer1.Interval = 1000;    

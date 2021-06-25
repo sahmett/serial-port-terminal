@@ -119,7 +119,7 @@
             this.lbGelenVeri.FormattingEnabled = true;
             this.lbGelenVeri.Location = new System.Drawing.Point(112, 250);
             this.lbGelenVeri.Name = "lbGelenVeri";
-            this.lbGelenVeri.Size = new System.Drawing.Size(241, 186);
+            this.lbGelenVeri.Size = new System.Drawing.Size(241, 134);
             this.lbGelenVeri.TabIndex = 23;
             // 
             // tbGidecekVeri
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 474);
+            this.ClientSize = new System.Drawing.Size(384, 432);
             this.Controls.Add(this.labelGelenVeri);
             this.Controls.Add(this.labelGidenVeri);
             this.Controls.Add(this.labelGidecekVeri);
