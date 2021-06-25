@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 
@@ -26,7 +19,12 @@ namespace WindowsFormsApp1
             cbBauderate.Items.AddRange(new string[]
             { "300", "600", "1200", "2400", "4800", "9600", "19200" }); //bauderate degerleri
 
+            serialPort1.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived); 
+            serialPort1.NewLine = "\n";
+
         }
+
+        private string data;
 
         private void btnBaglan_Click(object sender, EventArgs e)
         {
@@ -37,105 +35,71 @@ namespace WindowsFormsApp1
 
                 if (!serialPort1.IsOpen)
                 {
-                    timer1.Start();
                     serialPort1.Open();
-
                     btnBaglan.Enabled = false;
                     btnBaglantiKes.Enabled = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex+ "Baglantı Kurulamadı");
+                MessageBox.Show(ex.Message +"Baglantı Kurulamadı");
                 btnBaglantiKes.Enabled = true;
             }     
     }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            try
-            {   
-                //read existing de kullanılabilir
-                string sonuc = serialPort1.ReadLine();      
-                lbGelenVeri.Items.Add(sonuc);
+            data = serialPort1.ReadLine();
+            this.Invoke(new EventHandler(displayData_event));
+        }
 
-                //string[] paket = sonuc.Split('#');         //split türü
-                //double degisken1 = Convert.ToDouble(paket[0]);
-                //lbGelenVeri.Items.Add(degisken1);
-                //double degisken2 = Convert.ToDouble(paket[1]);     
-                //ouble degisken3 = Convert.ToDouble(paket[2]);  
-
-                try
+        private void displayData_event(object sender, EventArgs e)
+        {
+             try
                 {
-                    const string sPath = "log.txt";
-                    System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
-                    foreach (var item in lbGelenVeri.Items)
+                    lbGelenVeri.Items.Add(data);
+                    try
                     {
-                        SaveFile.WriteLine(item);
+                        const string sPath = "log.txt";
+                        System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
+                        foreach (var item in lbGelenVeri.Items)
+                        {
+                            SaveFile.WriteLine(item);
+                        }
+                        SaveFile.Close();        //sürekli kapanması sağlıksız olabilir
                     }
-
-                SaveFile.Close();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex + "Txt Kaydedilemedi");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex+ "Txt Kaydedilemedi");  
+                    MessageBox.Show(ex + "Timer Hatası, Baglantınız Kesiliyor ");
+                    serialPort1.Close();
+                    btnBaglan.Enabled = true;
+                    btnBaglantiKes.Enabled = false;
                 }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex + "Timer Hatası, Baglantınız Kesiliyor ");
-                timer1.Stop();
-                serialPort1.Close();
-                btnBaglan.Enabled = true;
-                btnBaglantiKes.Enabled = false;
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e) //formun yenilenme hızı 
-        {
-            timer1.Interval = 1000;
-           
         }
 
         private void btnBaglantiKes_Click(object sender, EventArgs e)
         {
             serialPort1.Close();
-            timer1.Stop();
             btnBaglan.Enabled = true;
             btnBaglantiKes.Enabled = false;
             MessageBox.Show("Baglantı Kesildi");
       
         }
-
         private void btnVeriGonder_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!serialPort1.IsOpen)
-                {
-                    serialPort1.WriteLine(tbGidecekVeri.Text);
-                    //serialPort1.Write(tbGidecekVeri.Text);
-                   
-                    lbGidenVeri.Items.Add(tbGidecekVeri.Text);
-                    tbGidecekVeri.Clear();
-                }
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Port Bağlantısı Yok, Yeniden Baglanmaya Calısınız");
-                timer1.Stop();
-                serialPort1.Close();
-                btnBaglan.Enabled = true;
-                btnBaglantiKes.Enabled = false;
-            }
+        {  
+            serialPort1.Write(tbGidecekVeri.Text);
 
         }
-        private void Form1_Load_1(object sender, EventArgs e)//formun yenilenme hızı
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-                timer1.Interval = 1000;    
+            if (serialPort1.IsOpen) serialPort1.Close();    //Seri port açıksa kapat
 
         }
+
     }
 }
