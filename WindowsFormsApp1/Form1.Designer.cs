@@ -42,7 +42,6 @@
             this.labelGidecekVeri = new System.Windows.Forms.Label();
             this.labelGidenVeri = new System.Windows.Forms.Label();
             this.labelGelenVeri = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
@@ -173,10 +172,6 @@
             this.labelGelenVeri.TabIndex = 28;
             this.labelGelenVeri.Text = "Gelen Veri";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,7 +192,7 @@
             this.Controls.Add(this.cbPort);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +213,6 @@
         private System.Windows.Forms.Label labelGidecekVeri;
         private System.Windows.Forms.Label labelGidenVeri;
         private System.Windows.Forms.Label labelGelenVeri;
-        private System.Windows.Forms.Timer timer1;
         private System.IO.Ports.SerialPort serialPort1;
     }
 }
