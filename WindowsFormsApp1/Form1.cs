@@ -17,15 +17,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-
-
             string[] portlar = SerialPort.GetPortNames();  //port cagırmak
             foreach (string portAdi in portlar)
             {
                 cbPort.Items.Add(portAdi);
             }
             
-
             cbBauderate.Items.AddRange(new string[]
             { "300", "600", "1200", "2400", "4800", "9600", "19200" }); //bauderate degerleri
 
@@ -57,16 +54,16 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
-            {       //read existing de kullanılabilir
+            {   
+                //read existing de kullanılabilir
                 string sonuc = serialPort1.ReadLine();      
-                
+                lbGelenVeri.Items.Add(sonuc);
+
                 //string[] paket = sonuc.Split('#');         //split türü
                 //double degisken1 = Convert.ToDouble(paket[0]);
                 //lbGelenVeri.Items.Add(degisken1);
                 //double degisken2 = Convert.ToDouble(paket[1]);     
                 //ouble degisken3 = Convert.ToDouble(paket[2]);  
-
-                lbGelenVeri.Items.Add(sonuc);
 
                 try
                 {
@@ -81,14 +78,13 @@ namespace WindowsFormsApp1
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex+ "Txt Kaydedilemedi"); 
-                    
+                    MessageBox.Show(ex+ "Txt Kaydedilemedi");  
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex + "Timer Hatası, baglantı kesiliyor ");
+                MessageBox.Show(ex + "Timer Hatası, Baglantınız Kesiliyor ");
                 timer1.Stop();
                 serialPort1.Close();
                 btnBaglan.Enabled = true;
