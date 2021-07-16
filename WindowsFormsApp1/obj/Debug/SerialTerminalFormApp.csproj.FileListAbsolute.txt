@@ -8,3 +8,6 @@ D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\SerialTerminalFormApp.csp
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\SerialTerminalFormApp.csproj.CoreCompileInputs.cache
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\GMap.NET.Core.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\GMap.NET.WindowsForms.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\SerialTerminalFormApp.csproj.CopyComplete
