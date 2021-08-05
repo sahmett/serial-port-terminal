@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
         //DEGİSKENLER
         public static double lat = 0.0, longt = 0.0; int zoom = 5;       //harita degiskenleri
         public string data; //data degiskeni
+        public static double arttirma = 1.0;
 
         public Form1()
         {
@@ -57,14 +58,15 @@ namespace WindowsFormsApp1
         //seri port yakalayıcının satır okuma tetiklemesi
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            data = serialPort1.ReadLine(); //satır satır oku serail portu
-
+            data = serialPort1.ReadLine(); //serail portu satır satır oku 
             this.Invoke(new EventHandler(displayData_event));
         }
 
         //seri port yakalayıcının, veri geldiğinde uygulayacağı tüm işlemleri burada
         private void displayData_event(object sender, EventArgs e)
         {
+            arttirma += 0.00; //haritada hareket sağlamak icun
+
             try
             {
                 string[] paket = data.Split('#');                   //split türü
@@ -72,11 +74,15 @@ namespace WindowsFormsApp1
                 lat = Convert.ToDouble(paket[1]);                   //gps longh
                 longt = Convert.ToDouble(paket[2]);                 //gps longh
 
+                lat += arttirma;   //hareket
+                longt += arttirma; 
+
+
                 this.chart1.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), hizdeger);        //chart1 hız 
                 txbHiz.Text = (hizdeger) + "";
 
-                this.chart2.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), lat);        //chart1 hız 
-                txbHiz.Text = (lat) + "";
+                this.chart2.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), lat);        //chart2 hız 
+                txbHiz.Text = (hizdeger+10) + "";
 
             }
             catch (Exception ex)
@@ -87,24 +93,17 @@ namespace WindowsFormsApp1
                 btnBaglantiKes.Enabled = false;
             }
 
-            try
+            try //txt kaydetme V1
+            {
+                lbGelenVeri.Items.Add(data);
+                const string sPath = "log.txt";
+                System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append:true);
+                foreach (var item in lbGelenVeri.Items)
                 {
-                    lbGelenVeri.Items.Add(data);
-                    try
-                    {
-                        const string sPath = "log.txt";
-                        System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
-                        foreach (var item in lbGelenVeri.Items)
-                        {
-                            SaveFile.WriteLine(item);
-                        }
-                        SaveFile.Close();        
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex + "Txt Kaydedilemedi");
-                    }
+                    SaveFile.WriteLine(item);
                 }
+                SaveFile.Close();
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex + "Txt Kayıt Hatası, Baglantınız Kesiliyor ");
@@ -113,10 +112,33 @@ namespace WindowsFormsApp1
                     btnBaglantiKes.Enabled = false;
                 }
 
-            {
 
+            try  //txt kaydetme v2
+            {
+                const string sPath = "logV2.txt";
+                using (System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append: true))
+                {
+                    SaveFile.WriteLine(data);
+                    SaveFile.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "Txt Kayıt Hatası, Baglantınız Kesiliyor ");
+                serialPort1.Close();
+                btnBaglan.Enabled = true;
+                btnBaglantiKes.Enabled = false;
+            }
+
+            {
                 //harita konumu revize
-                gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                GMaps.Instance.Mode = AccessMode.ServerAndCache;
+                gMapControl1.CacheLocation = @"cache";
+                gMapControl1.DragButton = MouseButtons.Left;
+                gMapControl1.ShowCenter = false;
+
+                gMapControl1.MapProvider = GMapProviders.GoogleMap; //tekrar yazmak gereksiz olabilir
+
                 gMapControl1.Position = new PointLatLng(lat, longt);  //lat longt 
                 gMapControl1.MinZoom = 5;
                 gMapControl1.MaxZoom = 100;
