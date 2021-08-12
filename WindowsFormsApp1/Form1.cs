@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using GMap.NET.MapProviders;
 using GMap.NET;
+using GMap.NET.WindowsForms;
 
 namespace WindowsFormsApp1
 {
@@ -10,9 +11,12 @@ namespace WindowsFormsApp1
     {
 
         //DEGİSKENLER
-        public static double lat = 0.0, longt = 0.0; int zoom = 5;       //harita degiskenleri
+        public static double gps_lat = 0.0, gps_long = 0.0; int zoom = 5;       //harita degiskenleri
         public string data; //data degiskeni
+        GMapMarker rocket_marker;
+        GMapMarker ground_marker;
         public static double arttirma = 1.0;
+        public static int deg = 1;
 
         public Form1()
         {
@@ -26,6 +30,10 @@ namespace WindowsFormsApp1
             
             cbBauderate.Items.AddRange(new string[]
             { "300", "600", "1200", "2400", "4800", "9600", "19200" }); //bauderate atama
+
+
+            //fonksyonlar
+            setUpMap();
 
 
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(SerialPort1_DataReceived); //gelen veri yakalama
@@ -67,22 +75,30 @@ namespace WindowsFormsApp1
         {
             arttirma += 0.00; //haritada hareket sağlamak icun
 
+            //fonksyonlar
+            splitData();
+            saveTxt();
+            setLocation();
+
+        }
+        private void splitData()
+        {
             try
             {
                 string[] paket = data.Split('#');                   //split türü
                 double hizdeger = Convert.ToDouble(paket[0]);       //grafik hız
-                lat = Convert.ToDouble(paket[1]);                   //gps longh
-                longt = Convert.ToDouble(paket[2]);                 //gps longh
+                gps_lat = Convert.ToDouble(paket[1]);                   //gps longh
+                gps_long = Convert.ToDouble(paket[2]);                 //gps longh
 
-                lat += arttirma;   //hareket
-                longt += arttirma; 
+                gps_lat += arttirma;   //hareket simüle etme
+                gps_long += arttirma;
 
 
                 this.chart1.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), hizdeger);        //chart1 hız 
                 txbHiz.Text = (hizdeger) + "";
 
-                this.chart2.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), lat);        //chart2 hız 
-                txbHiz.Text = (hizdeger+10) + "";
+                this.chart2.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), (hizdeger) );             //chart2 hız 
+                txbHiz.Text = (hizdeger + 10) + "";
 
             }
             catch (Exception ex)
@@ -92,25 +108,30 @@ namespace WindowsFormsApp1
                 btnBaglan.Enabled = true;
                 btnBaglantiKes.Enabled = false;
             }
+        }
 
-            try //txt kaydetme V1
+        #region TXT
+        //TXT
+        private void saveTxt()
+        {
+            try //txt kaydetme V1 eski
             {
                 lbGelenVeri.Items.Add(data);
                 const string sPath = "log.txt";
-                System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append:true);
+                System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append: true);
                 foreach (var item in lbGelenVeri.Items)
                 {
                     SaveFile.WriteLine(item);
                 }
                 SaveFile.Close();
             }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex + "Txt Kayıt Hatası, Baglantınız Kesiliyor ");
-                    serialPort1.Close();
-                    btnBaglan.Enabled = true;
-                    btnBaglantiKes.Enabled = false;
-                }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "Txt Kayıt Hatası, Baglantınız Kesiliyor ");
+                serialPort1.Close();
+                btnBaglan.Enabled = true;
+                btnBaglantiKes.Enabled = false;
+            }
 
 
             try  //txt kaydetme v2
@@ -129,25 +150,64 @@ namespace WindowsFormsApp1
                 btnBaglan.Enabled = true;
                 btnBaglantiKes.Enabled = false;
             }
+        }
+        #endregion
 
-            {
-                //harita konumu revize
-                GMaps.Instance.Mode = AccessMode.ServerAndCache;
-                gMapControl1.CacheLocation = @"cache";
-                gMapControl1.DragButton = MouseButtons.Left;
-                gMapControl1.ShowCenter = false;
+        #region Harita 
+        //HARİTA
+        private void setUpMap()
+        {
+            //mapView.Position = new PointLatLng(42, 21);
 
-                gMapControl1.MapProvider = GMapProviders.GoogleMap; //tekrar yazmak gereksiz olabilir
-
-                gMapControl1.Position = new PointLatLng(lat, longt);  //lat longt 
-                gMapControl1.MinZoom = 5;
-                gMapControl1.MaxZoom = 100;
-                gMapControl1.Zoom = 10;
-            }
-
+            
+            GMapProviders.GoogleMap.ApiKey = "AIzaSyBqKYJKZ4KuUNK7_PeOPUFFeV5MYQdkTvI";
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            GMaps.Instance.Mode = AccessMode.ServerAndCache;
+            gMapControl1.MaxZoom = 70;
+            gMapControl1.MinZoom = 5;
+            gMapControl1.Zoom = 15;
+            gMapControl1.ShowCenter = false;
+            gMapControl1.DragButton = MouseButtons.Left;
         }
 
-        //HARİTA
+        private void setLocation()
+        {
+
+            if (gps_lat != 0 && gps_long != 0)
+            {
+                gMapControl1.Position = new PointLatLng(gps_lat, gps_long);
+                rocket_marker.Position = new PointLatLng(gps_lat, gps_long);
+                ground_marker.Position = new PointLatLng(gps_lat, gps_long);
+            }
+            else
+            {
+                MessageBox.Show("Konum değeri okunamadı.");
+            }
+        }
+
+        private void setGroundMaker(double longitude, double latitude)
+        {
+           
+            ground_marker = new GMapMarker(new PointLatLng(444, 55));
+            gMapControl1.Markers.Add(ground_marker);
+           
+
+            try
+            {
+                ground_marker.Shape = new System.Windows.Controls.Image
+                {
+                    Width = 50,
+                    Height = 50,
+                    Source = new BitmapImage(new Uri(@"C:\Users\faruk\source\repos\TaliaGroundStation\TaliaGroundStation\groundStation.png"))
+                };
+                MessageBox.Show("Yer istasyonunu konumu setlendi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ground MARKER " + ex.Message);
+            }
+        }
+
         private void btnArti_Click(object sender, EventArgs e) //harita yakınlastırma
         {
             if (zoom < 100)
@@ -169,14 +229,14 @@ namespace WindowsFormsApp1
             if (serialPort1.IsOpen)
             {
                 gMapControl1.MapProvider = GMapProviders.GoogleMap;
-                gMapControl1.Position = new PointLatLng(lat, longt);  //lat longt
+                gMapControl1.Position = new PointLatLng(gps_lat, gps_long);  //gps_lat gps_long
                 gMapControl1.MinZoom = 5;
                 gMapControl1.MaxZoom = 100;
                 gMapControl1.Zoom = 10;
             }
         }
 
-
+        #endregion
 
         private void btnBaglantiKes_Click(object sender, EventArgs e)
         {
