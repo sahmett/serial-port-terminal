@@ -51,7 +51,6 @@
             this.btnEksi = new System.Windows.Forms.Button();
             this.btnArti = new System.Windows.Forms.Button();
             this.bt_bul = new System.Windows.Forms.Button();
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -76,6 +75,7 @@
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txbYukseklik = new System.Windows.Forms.TextBox();
             this.lbYukseklik = new System.Windows.Forms.Label();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
@@ -259,32 +259,6 @@
             this.bt_bul.Text = "Bul";
             this.bt_bul.UseVisualStyleBackColor = true;
             this.bt_bul.Click += new System.EventHandler(this.btnBul_Click);
-            // 
-            // gMapControl1
-            // 
-            this.gMapControl1.Bearing = 0F;
-            this.gMapControl1.CanDragMap = true;
-            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapControl1.GrayScaleMode = false;
-            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl1.LevelsKeepInMemory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(833, 77);
-            this.gMapControl1.MarkersEnabled = true;
-            this.gMapControl1.MaxZoom = 2;
-            this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomEnabled = true;
-            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl1.Name = "gMapControl1";
-            this.gMapControl1.NegativeMode = false;
-            this.gMapControl1.PolygonsEnabled = true;
-            this.gMapControl1.RetryLoadTile = 0;
-            this.gMapControl1.RoutesEnabled = true;
-            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(262, 427);
-            this.gMapControl1.TabIndex = 32;
-            this.gMapControl1.Zoom = 0D;
             // 
             // textBox9
             // 
@@ -512,6 +486,32 @@
             this.lbYukseklik.TabIndex = 58;
             this.lbYukseklik.Text = "Faydali Yuk Hiz";
             // 
+            // gMapControl1
+            // 
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(833, 77);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(262, 427);
+            this.gMapControl1.TabIndex = 32;
+            this.gMapControl1.Zoom = 0D;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnArti;
@@ -590,7 +590,6 @@
         private System.Windows.Forms.Button btnEksi;
         private System.Windows.Forms.Button btnArti;
         private System.Windows.Forms.Button bt_bul;
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -615,6 +614,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.TextBox txbYukseklik;
         private System.Windows.Forms.Label lbYukseklik;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }
 
