@@ -252,10 +252,11 @@ namespace WindowsFormsApp1
             btnBaglantiKes.Enabled = false;
             MessageBox.Show("Baglantı Kesildi");
         }
+        /*
         private void btnVeriGonder_Click(object sender, EventArgs e)
         {  
             serialPort1.Write(tbGidecekVeri.Text);
-        }
+        } */
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {

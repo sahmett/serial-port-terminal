@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnBaglantiKes = new System.Windows.Forms.Button();
             this.btnBaglan = new System.Windows.Forms.Button();
             this.labelPort = new System.Windows.Forms.Label();
@@ -162,17 +162,17 @@
             // 
             this.chart1.AllowDrop = true;
             this.chart1.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
             this.chart1.IsSoftShadows = false;
             this.chart1.Location = new System.Drawing.Point(426, 46);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series5.BorderWidth = 3;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Name = "Sicaklik";
-            this.chart1.Series.Add(series5);
+            series9.BorderWidth = 3;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Name = "Sicaklik";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(312, 209);
             this.chart1.TabIndex = 29;
             this.chart1.Text = "chart1";
@@ -191,11 +191,11 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(624, 39);
+            this.label4.Location = new System.Drawing.Point(587, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 16);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Hiz";
+            this.label4.Text = "Roket Hiz";
             // 
             // btnEksi
             // 
@@ -234,63 +234,63 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(135, 470);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(54, 20);
+            this.textBox9.Size = new System.Drawing.Size(62, 20);
             this.textBox9.TabIndex = 45;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(136, 359);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 20);
+            this.textBox6.Size = new System.Drawing.Size(132, 20);
             this.textBox6.TabIndex = 52;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(136, 332);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(116, 20);
+            this.textBox5.Size = new System.Drawing.Size(132, 20);
             this.textBox5.TabIndex = 51;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(135, 442);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(54, 20);
+            this.textBox8.Size = new System.Drawing.Size(62, 20);
             this.textBox8.TabIndex = 50;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(136, 306);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
+            this.textBox4.Size = new System.Drawing.Size(132, 20);
             this.textBox4.TabIndex = 49;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(194, 470);
+            this.textBox15.Location = new System.Drawing.Point(206, 470);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(54, 20);
+            this.textBox15.Size = new System.Drawing.Size(62, 20);
             this.textBox15.TabIndex = 54;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(136, 283);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(115, 20);
+            this.textBox3.Size = new System.Drawing.Size(132, 20);
             this.textBox3.TabIndex = 48;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(135, 413);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(54, 20);
+            this.textBox7.Size = new System.Drawing.Size(62, 20);
             this.textBox7.TabIndex = 47;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(136, 257);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 20);
+            this.textBox2.Size = new System.Drawing.Size(132, 20);
             this.textBox2.TabIndex = 46;
             // 
             // label7
@@ -298,7 +298,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(127, 398);
+            this.label7.Location = new System.Drawing.Point(134, 398);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 12);
             this.label7.TabIndex = 56;
@@ -306,16 +306,16 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(195, 442);
+            this.textBox14.Location = new System.Drawing.Point(207, 442);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(53, 20);
+            this.textBox14.Size = new System.Drawing.Size(61, 20);
             this.textBox14.TabIndex = 55;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(194, 413);
+            this.textBox13.Location = new System.Drawing.Point(206, 413);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(54, 20);
+            this.textBox13.Size = new System.Drawing.Size(62, 20);
             this.textBox13.TabIndex = 53;
             // 
             // label12
@@ -411,7 +411,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(203, 398);
+            this.label9.Location = new System.Drawing.Point(215, 398);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 12);
             this.label9.TabIndex = 36;
@@ -421,17 +421,17 @@
             // 
             this.chart2.AllowDrop = true;
             this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
+            chartArea10.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea10);
             this.chart2.IsSoftShadows = false;
             this.chart2.Location = new System.Drawing.Point(426, 292);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series6.BorderWidth = 3;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Name = "Sicaklik";
-            this.chart2.Series.Add(series6);
+            series10.BorderWidth = 3;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Name = "Sicaklik";
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(312, 212);
             this.chart2.TabIndex = 57;
             this.chart2.Text = "chart2";
@@ -497,7 +497,7 @@
             this.AcceptButton = this.btnArti;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 543);
+            this.ClientSize = new System.Drawing.Size(1152, 543);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.txbFayHiz);
