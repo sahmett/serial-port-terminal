@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1: Form
     {
-
+        
         //DEGİSKENLER
         public static double gps_lat = 0.0, gps_long = 0.0; int zoom = 5;       //harita degiskenleri
         public string data; //data degiskeni
@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            
 
             string[] portlar = SerialPort.GetPortNames();  //port getir
             foreach (string portAdi in portlar)
@@ -90,15 +91,15 @@ namespace WindowsFormsApp1
                 gps_lat = Convert.ToDouble(paket[1]);                   //gps longh
                 gps_long = Convert.ToDouble(paket[2]);                 //gps longh
 
-                gps_lat += arttirma;   //hareket simüle etme
-                gps_long += arttirma;
+                //gps_lat += arttirma;                          //hareket simüle etme
+                //gps_long += arttirma;
 
 
                 this.chart1.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), hizdeger);        //chart1 hız 
-                txbHiz.Text = (hizdeger) + "";
+                txbRoketHiz.Text = (hizdeger) + "";
 
                 this.chart2.Series[0].Points.AddXY(DateTime.Now.ToString("HH:mm:ss"), (hizdeger) );             //chart2 hız 
-                txbHiz.Text = (hizdeger + 10) + "";
+                txbFayHiz.Text = (hizdeger + 10) + "";
 
             }
             catch (Exception ex)
@@ -176,8 +177,10 @@ namespace WindowsFormsApp1
             if (gps_lat != 0 && gps_long != 0)
             {
                 gMapControl1.Position = new PointLatLng(gps_lat, gps_long);
-                rocket_marker.Position = new PointLatLng(gps_lat, gps_long);
-                ground_marker.Position = new PointLatLng(gps_lat, gps_long);
+                gMapControl1.ShowCenter = true;
+
+                //rocket_marker.Position = new PointLatLng(gps_lat, gps_long);
+                //ground_marker.Position = new PointLatLng(gps_lat, gps_long);
             }
             else
             {
@@ -185,6 +188,8 @@ namespace WindowsFormsApp1
             }
         }
 
+        /*
+        //ARZA YER IST MARKER
         private void setGroundMaker(double longitude, double latitude)
         {
            
@@ -207,6 +212,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Ground MARKER " + ex.Message);
             }
         }
+
+        */
 
         private void btnArti_Click(object sender, EventArgs e) //harita yakınlastırma
         {

@@ -11,3 +11,17 @@ D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\GMap.NET.Core.dll
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\GMap.NET.WindowsForms.dll
 D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\obj\Debug\SerialTerminalFormApp.csproj.CopyComplete
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SqlClient.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SQLite.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Security.Principal.Windows.dll
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SqlClient.xml
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Data.SQLite.xml
+D:\Ahmet Bey Dosyalar\Repos\WindowsFormsApp1\bin\Debug\System.Security.Principal.Windows.xml

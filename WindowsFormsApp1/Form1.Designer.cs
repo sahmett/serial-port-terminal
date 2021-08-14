@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnBaglantiKes = new System.Windows.Forms.Button();
             this.btnBaglan = new System.Windows.Forms.Button();
             this.labelPort = new System.Windows.Forms.Label();
@@ -40,13 +40,10 @@
             this.cbBauderate = new System.Windows.Forms.ComboBox();
             this.cbPort = new System.Windows.Forms.ComboBox();
             this.lbGelenVeri = new System.Windows.Forms.ListBox();
-            this.tbGidecekVeri = new System.Windows.Forms.TextBox();
-            this.btnVeriGonder = new System.Windows.Forms.Button();
-            this.labelGidecekVeri = new System.Windows.Forms.Label();
             this.labelGelenVeri = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.txbHiz = new System.Windows.Forms.TextBox();
+            this.txbRoketHiz = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEksi = new System.Windows.Forms.Button();
             this.btnArti = new System.Windows.Forms.Button();
@@ -73,17 +70,22 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.txbYukseklik = new System.Windows.Forms.TextBox();
+            this.txbFayHiz = new System.Windows.Forms.TextBox();
             this.lbYukseklik = new System.Windows.Forms.Label();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbGidecekVeri = new System.Windows.Forms.TextBox();
+            this.btnVeriGonder = new System.Windows.Forms.Button();
+            this.labelGidecekVeri = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBaglantiKes
             // 
             this.btnBaglantiKes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBaglantiKes.Location = new System.Drawing.Point(290, 99);
+            this.btnBaglantiKes.Location = new System.Drawing.Point(290, 94);
             this.btnBaglantiKes.Name = "btnBaglantiKes";
             this.btnBaglantiKes.Size = new System.Drawing.Size(87, 23);
             this.btnBaglantiKes.TabIndex = 15;
@@ -94,7 +96,7 @@
             // btnBaglan
             // 
             this.btnBaglan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBaglan.Location = new System.Drawing.Point(290, 44);
+            this.btnBaglan.Location = new System.Drawing.Point(290, 37);
             this.btnBaglan.Name = "btnBaglan";
             this.btnBaglan.Size = new System.Drawing.Size(87, 51);
             this.btnBaglan.TabIndex = 14;
@@ -118,7 +120,7 @@
             this.labelBaudrate.AutoSize = true;
             this.labelBaudrate.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.labelBaudrate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelBaudrate.Location = new System.Drawing.Point(42, 76);
+            this.labelBaudrate.Location = new System.Drawing.Point(40, 80);
             this.labelBaudrate.Name = "labelBaudrate";
             this.labelBaudrate.Size = new System.Drawing.Size(49, 12);
             this.labelBaudrate.TabIndex = 19;
@@ -127,7 +129,7 @@
             // cbBauderate
             // 
             this.cbBauderate.FormattingEnabled = true;
-            this.cbBauderate.Location = new System.Drawing.Point(136, 74);
+            this.cbBauderate.Location = new System.Drawing.Point(135, 76);
             this.cbBauderate.Name = "cbBauderate";
             this.cbBauderate.Size = new System.Drawing.Size(133, 21);
             this.cbBauderate.TabIndex = 17;
@@ -145,44 +147,15 @@
             this.lbGelenVeri.FormattingEnabled = true;
             this.lbGelenVeri.Location = new System.Drawing.Point(136, 174);
             this.lbGelenVeri.Name = "lbGelenVeri";
-            this.lbGelenVeri.Size = new System.Drawing.Size(241, 43);
+            this.lbGelenVeri.Size = new System.Drawing.Size(241, 82);
             this.lbGelenVeri.TabIndex = 23;
-            // 
-            // tbGidecekVeri
-            // 
-            this.tbGidecekVeri.Location = new System.Drawing.Point(135, 148);
-            this.tbGidecekVeri.Name = "tbGidecekVeri";
-            this.tbGidecekVeri.Size = new System.Drawing.Size(133, 20);
-            this.tbGidecekVeri.TabIndex = 24;
-            // 
-            // btnVeriGonder
-            // 
-            this.btnVeriGonder.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnVeriGonder.Location = new System.Drawing.Point(290, 137);
-            this.btnVeriGonder.Name = "btnVeriGonder";
-            this.btnVeriGonder.Size = new System.Drawing.Size(87, 31);
-            this.btnVeriGonder.TabIndex = 25;
-            this.btnVeriGonder.Text = "Veri Gonder";
-            this.btnVeriGonder.UseVisualStyleBackColor = true;
-            this.btnVeriGonder.Click += new System.EventHandler(this.btnVeriGonder_Click);
-            // 
-            // labelGidecekVeri
-            // 
-            this.labelGidecekVeri.AutoSize = true;
-            this.labelGidecekVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
-            this.labelGidecekVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelGidecekVeri.Location = new System.Drawing.Point(40, 147);
-            this.labelGidecekVeri.Name = "labelGidecekVeri";
-            this.labelGidecekVeri.Size = new System.Drawing.Size(77, 12);
-            this.labelGidecekVeri.TabIndex = 26;
-            this.labelGidecekVeri.Text = "Gidecek Veri";
             // 
             // labelGelenVeri
             // 
             this.labelGelenVeri.AutoSize = true;
             this.labelGelenVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.labelGelenVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelGelenVeri.Location = new System.Drawing.Point(41, 185);
+            this.labelGelenVeri.Location = new System.Drawing.Point(45, 180);
             this.labelGelenVeri.Name = "labelGelenVeri";
             this.labelGelenVeri.Size = new System.Drawing.Size(64, 12);
             this.labelGelenVeri.TabIndex = 28;
@@ -192,28 +165,28 @@
             // 
             this.chart1.AllowDrop = true;
             this.chart1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.IsSoftShadows = false;
             this.chart1.Location = new System.Drawing.Point(426, 46);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Name = "Sicaklik";
-            this.chart1.Series.Add(series1);
+            series3.BorderWidth = 3;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Name = "Sicaklik";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(312, 209);
             this.chart1.TabIndex = 29;
             this.chart1.Text = "chart1";
             // 
-            // txbHiz
+            // txbRoketHiz
             // 
-            this.txbHiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.txbHiz.Location = new System.Drawing.Point(657, 20);
-            this.txbHiz.Name = "txbHiz";
-            this.txbHiz.Size = new System.Drawing.Size(64, 20);
-            this.txbHiz.TabIndex = 31;
+            this.txbRoketHiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txbRoketHiz.Location = new System.Drawing.Point(657, 37);
+            this.txbRoketHiz.Name = "txbRoketHiz";
+            this.txbRoketHiz.Size = new System.Drawing.Size(64, 20);
+            this.txbRoketHiz.TabIndex = 31;
             // 
             // label4
             // 
@@ -221,7 +194,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(624, 22);
+            this.label4.Location = new System.Drawing.Point(624, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 16);
             this.label4.TabIndex = 30;
@@ -262,63 +235,63 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(135, 456);
+            this.textBox9.Location = new System.Drawing.Point(135, 482);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(54, 20);
             this.textBox9.TabIndex = 45;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(136, 345);
+            this.textBox6.Location = new System.Drawing.Point(136, 371);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(116, 20);
             this.textBox6.TabIndex = 52;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(136, 318);
+            this.textBox5.Location = new System.Drawing.Point(136, 344);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(116, 20);
             this.textBox5.TabIndex = 51;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(135, 428);
+            this.textBox8.Location = new System.Drawing.Point(135, 454);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(54, 20);
             this.textBox8.TabIndex = 50;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(136, 292);
+            this.textBox4.Location = new System.Drawing.Point(136, 318);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(115, 20);
             this.textBox4.TabIndex = 49;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(194, 456);
+            this.textBox15.Location = new System.Drawing.Point(194, 482);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(54, 20);
             this.textBox15.TabIndex = 54;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(136, 269);
+            this.textBox3.Location = new System.Drawing.Point(136, 295);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(115, 20);
             this.textBox3.TabIndex = 48;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(135, 399);
+            this.textBox7.Location = new System.Drawing.Point(135, 425);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(54, 20);
             this.textBox7.TabIndex = 47;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 243);
+            this.textBox2.Location = new System.Drawing.Point(136, 269);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(116, 20);
             this.textBox2.TabIndex = 46;
@@ -328,7 +301,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(127, 384);
+            this.label7.Location = new System.Drawing.Point(127, 410);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 12);
             this.label7.TabIndex = 56;
@@ -336,14 +309,14 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(195, 428);
+            this.textBox14.Location = new System.Drawing.Point(195, 454);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(53, 20);
             this.textBox14.TabIndex = 55;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(194, 399);
+            this.textBox13.Location = new System.Drawing.Point(194, 425);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(54, 20);
             this.textBox13.TabIndex = 53;
@@ -353,7 +326,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(41, 348);
+            this.label12.Location = new System.Drawing.Point(41, 374);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(37, 12);
             this.label12.TabIndex = 43;
@@ -364,7 +337,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(41, 321);
+            this.label11.Location = new System.Drawing.Point(41, 347);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 12);
             this.label11.TabIndex = 42;
@@ -375,7 +348,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(41, 295);
+            this.label10.Location = new System.Drawing.Point(41, 321);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(28, 12);
             this.label10.TabIndex = 41;
@@ -386,7 +359,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(41, 246);
+            this.label8.Location = new System.Drawing.Point(41, 272);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 40;
@@ -397,7 +370,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(41, 272);
+            this.label6.Location = new System.Drawing.Point(41, 298);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 12);
             this.label6.TabIndex = 39;
@@ -408,7 +381,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(40, 407);
+            this.label13.Location = new System.Drawing.Point(40, 433);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 12);
             this.label13.TabIndex = 38;
@@ -419,7 +392,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(40, 459);
+            this.label5.Location = new System.Drawing.Point(40, 485);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 12);
             this.label5.TabIndex = 37;
@@ -430,7 +403,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(40, 431);
+            this.label14.Location = new System.Drawing.Point(40, 457);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 12);
             this.label14.TabIndex = 44;
@@ -441,7 +414,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(203, 384);
+            this.label9.Location = new System.Drawing.Point(203, 410);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 12);
             this.label9.TabIndex = 36;
@@ -451,28 +424,28 @@
             // 
             this.chart2.AllowDrop = true;
             this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
             this.chart2.IsSoftShadows = false;
             this.chart2.Location = new System.Drawing.Point(426, 292);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Name = "Sicaklik";
-            this.chart2.Series.Add(series2);
+            series4.BorderWidth = 3;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Name = "Sicaklik";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(312, 212);
             this.chart2.TabIndex = 57;
             this.chart2.Text = "chart2";
             // 
-            // txbYukseklik
+            // txbFayHiz
             // 
-            this.txbYukseklik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.txbYukseklik.Location = new System.Drawing.Point(657, 267);
-            this.txbYukseklik.Name = "txbYukseklik";
-            this.txbYukseklik.Size = new System.Drawing.Size(64, 20);
-            this.txbYukseklik.TabIndex = 59;
+            this.txbFayHiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.txbFayHiz.Location = new System.Drawing.Point(657, 267);
+            this.txbFayHiz.Name = "txbFayHiz";
+            this.txbFayHiz.Size = new System.Drawing.Size(64, 20);
+            this.txbFayHiz.TabIndex = 59;
             // 
             // lbYukseklik
             // 
@@ -494,7 +467,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(833, 77);
+            this.gMapControl1.Location = new System.Drawing.Point(833, 68);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -508,18 +481,58 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(262, 427);
+            this.gMapControl1.Size = new System.Drawing.Size(271, 270);
             this.gMapControl1.TabIndex = 32;
             this.gMapControl1.Zoom = 0D;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Picture2;
+            this.pictureBox1.Location = new System.Drawing.Point(833, 344);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(262, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tbGidecekVeri
+            // 
+            this.tbGidecekVeri.Location = new System.Drawing.Point(135, 148);
+            this.tbGidecekVeri.Name = "tbGidecekVeri";
+            this.tbGidecekVeri.Size = new System.Drawing.Size(133, 20);
+            this.tbGidecekVeri.TabIndex = 24;
+            // 
+            // btnVeriGonder
+            // 
+            this.btnVeriGonder.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnVeriGonder.Location = new System.Drawing.Point(290, 147);
+            this.btnVeriGonder.Name = "btnVeriGonder";
+            this.btnVeriGonder.Size = new System.Drawing.Size(87, 21);
+            this.btnVeriGonder.TabIndex = 25;
+            this.btnVeriGonder.Text = "Veri Gonder";
+            this.btnVeriGonder.UseVisualStyleBackColor = true;
+            this.btnVeriGonder.Click += new System.EventHandler(this.btnVeriGonder_Click);
+            // 
+            // labelGidecekVeri
+            // 
+            this.labelGidecekVeri.AutoSize = true;
+            this.labelGidecekVeri.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F);
+            this.labelGidecekVeri.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelGidecekVeri.Location = new System.Drawing.Point(45, 153);
+            this.labelGidecekVeri.Name = "labelGidecekVeri";
+            this.labelGidecekVeri.Size = new System.Drawing.Size(77, 12);
+            this.labelGidecekVeri.TabIndex = 26;
+            this.labelGidecekVeri.Text = "Gidecek Veri";
             // 
             // Form1
             // 
             this.AcceptButton = this.btnArti;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 556);
+            this.ClientSize = new System.Drawing.Size(1116, 543);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chart2);
-            this.Controls.Add(this.txbYukseklik);
+            this.Controls.Add(this.txbFayHiz);
             this.Controls.Add(this.lbYukseklik);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox6);
@@ -546,7 +559,7 @@
             this.Controls.Add(this.btnArti);
             this.Controls.Add(this.bt_bul);
             this.Controls.Add(this.gMapControl1);
-            this.Controls.Add(this.txbHiz);
+            this.Controls.Add(this.txbRoketHiz);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.labelGelenVeri);
@@ -561,10 +574,11 @@
             this.Controls.Add(this.cbBauderate);
             this.Controls.Add(this.cbPort);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Karluk";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,13 +593,10 @@
         private System.Windows.Forms.ComboBox cbBauderate;
         private System.Windows.Forms.ComboBox cbPort;
         private System.Windows.Forms.ListBox lbGelenVeri;
-        private System.Windows.Forms.TextBox tbGidecekVeri;
-        private System.Windows.Forms.Button btnVeriGonder;
-        private System.Windows.Forms.Label labelGidecekVeri;
         private System.Windows.Forms.Label labelGelenVeri;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.TextBox txbHiz;
+        private System.Windows.Forms.TextBox txbRoketHiz;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEksi;
         private System.Windows.Forms.Button btnArti;
@@ -612,9 +623,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.TextBox txbYukseklik;
+        private System.Windows.Forms.TextBox txbFayHiz;
         private System.Windows.Forms.Label lbYukseklik;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox tbGidecekVeri;
+        private System.Windows.Forms.Button btnVeriGonder;
+        private System.Windows.Forms.Label labelGidecekVeri;
     }
 }
 
